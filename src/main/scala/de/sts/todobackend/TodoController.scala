@@ -1,11 +1,11 @@
 package de.sts.todobackend
 
-import org.springframework.http.{HttpStatus, ResponseEntity}
-import org.springframework.web.bind.annotation.{RequestMapping, RestController}
+import org.springframework.web.bind.annotation.{CrossOrigin, RequestMapping, RestController}
 
 @RestController
+@RequestMapping(Array("/todos"))
 class TodoController {
 
-  @RequestMapping(Array("/todos"))
-  def getTodos: ResponseEntity[String] = new ResponseEntity[String]("All Todos", HttpStatus.OK)
+  @RequestMapping
+  def getTodos = List()
 }

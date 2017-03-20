@@ -22,9 +22,8 @@ class TodoControllerTest {
   }
 
   @Test
-  def helloWorldMessageWhenNameParameterIsNotSet(): Unit = {
+  def rootResourceReturns200Ok(): Unit = {
     mockMvc.perform(get("/todos"))
       .andExpect(status().isOk())
-      .andExpect(MockMvcResultMatchers.content().string("All Todos"))
   }
 }

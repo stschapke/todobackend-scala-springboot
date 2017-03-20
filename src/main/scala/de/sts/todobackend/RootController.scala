@@ -1,6 +1,6 @@
 package de.sts.todobackend
 
-import org.springframework.web.bind.annotation.{RequestMapping, RestController}
+import org.springframework.web.bind.annotation.{CrossOrigin, RequestMapping, RestController}
 import org.springframework.web.servlet.view.RedirectView
 
 @RestController

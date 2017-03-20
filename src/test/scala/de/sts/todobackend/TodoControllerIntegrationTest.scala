@@ -35,10 +35,14 @@ class TodoControllerIntegrationTest {
   }
 
   @Test
-  def helloWorldMessageWhenNameParameterIsNotSet(): Unit = {
+  def apiRootShouldReturn200Ok(): Unit = {
     mockMvc.perform(get("/todos"))
       .andExpect(status().isOk())
-      .andExpect(MockMvcResultMatchers.content().string("All Todos"))
   }
 
+  @Test
+  def apiRootReturnsCorsHeader(): Unit = {
+    mockMvc.perform(get("/todos").header("origin", "http://backend-todo.com"))
+      .andExpect(MockMvcResultMatchers.header().string("Access-Control-Allow-Origin", "http://backend-todo.com"))
+  }
 }

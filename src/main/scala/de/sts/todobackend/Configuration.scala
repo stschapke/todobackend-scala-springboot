@@ -1,10 +1,21 @@
 package de.sts.todobackend
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.context.annotation.ComponentScan
-import org.springframework.web.servlet.config.annotation.EnableWebMvc
+import org.springframework.context.annotation.{Bean, ComponentScan}
+import org.springframework.web.servlet.config.annotation._
 
-@EnableWebMvc
 @ComponentScan(Array("de.sts.todobackend"))
 @SpringBootApplication
-class Configuration
+class Configuration {
+
+  @Bean
+  def corsConfigurer: WebMvcConfigurer = {
+
+    new WebMvcConfigurerAdapter {
+      override def addCorsMappings(registry: CorsRegistry) = registry.addMapping("/**")
+        .allowedOrigins("*")
+        .allowedHeaders("x-requested-with, origin, content-type, accept")
+        .maxAge(3600)
+    }
+  }
+}
