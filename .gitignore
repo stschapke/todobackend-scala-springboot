@@ -1,5 +1,5 @@
 .idea
-target
+target/
 .DS_Store
 project/project
-project/target
+project/boot

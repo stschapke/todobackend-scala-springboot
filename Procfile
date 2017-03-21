@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/scala-2.12/todobackend-scala-springboot_2.12-0.0.1.jar
+web: target/universal/stage/bin/todobackend-scala-springboot -Dserver.port=$PORT

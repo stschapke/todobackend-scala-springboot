@@ -1,3 +1,5 @@
+enablePlugins(JavaAppPackaging)
+
 name := "todobackend-scala-springboot"
 
 version := "0.0.1"
